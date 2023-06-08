@@ -1,5 +1,8 @@
 <?php
+
 namespace App\Http\Controllers;
+
+use App\Http\Controllers\MobilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,15 +21,17 @@ Route::get('/', function () {
 });
 
 Route::get('/welcome', function () {
-        echo "selemat datang di laravel][]";
+    echo "selemat datang di laravel][]";
 });
 
 Route::get('/greeting', function () {
     return view('greeting');
 });
 
-Route::get('/mobil', [MobilController::class,'index']);
-Route::get('/mobil/create', [MobilController::class,'create']);
-Route::post('/mobil/simpan-data', [MobilController::class,'store']);
+Route::get('/mobil', [MobilController::class, 'index']);
+Route::get('/mobil/create', [MobilController::class, 'create']);
+Route::post('/mobil/simpan-data', [MobilController::class, 'store']);
 
 Route::get('/merk', [MerkController::class, 'index']);
+Route::get('/merk/create', [MerkController::class, 'create']);
+Route::post('/merk/simpan-data', [MerkController::class, 'store']);
